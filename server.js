@@ -1,4 +1,6 @@
-import { Mongoose } from 'mongoose';
+//import { Mongoose } from 'mongoose';
+
+require('dotenv').config();
 
 const express = require('express');
     app = express();
@@ -12,7 +14,7 @@ const express = require('express');
     app.use(expressLayout);
 
     // Database
-    mongoose.connect('mongodb://Othman:987963a@ds147450.mlab.com:47450/nodescotch');
+    mongoose.connect(process.env.DB_URI);
 
     app.use(require('./app/routes'));
 

@@ -7,4 +7,9 @@ const express = require('express');
 
     router.get('/', mainController.showHome);
     router.get('/events',       eventsController.showEvents);
+
+
+    //seed events
+    router.get('/events/seed', eventsController.seedEvents);
+
     router.get('/events/:slug', eventsController.showSingle);
